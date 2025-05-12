@@ -7,7 +7,7 @@ const routes = {
   };
   
   const app = document.getElementById('app');
-  
+  // FUNCION QUE CARGA LA RUTA
   const loadRoute = async () => {
     const path = location.hash.slice(1) || '/';
     console.log('path', path)
