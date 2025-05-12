@@ -1,0 +1,14 @@
+{
+  "name": "landing_page_identity_social_media",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+
+  },
+  "devDependencies": {
+
+  },
+  "author": "",
+  "license": "ISC"
+}
