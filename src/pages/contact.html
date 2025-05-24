@@ -1,5 +1,68 @@
-<section>
-    <h1>Contacto</h1>
-    <p>¿Tienes alguna duda? Escríbenos a contacto@empresa.com</p>
-  </section>
-  
+<section aria-labelledby="contact-heading">
+  <div class="contact-hero">
+    <h1 id="contact-heading">
+      Impulsa tus ideas<br> hacia el siguiente nivel
+    </h1>
+    <p>En IDENTITY, diseñamos soluciones digitales personalizadas<br> para transformar tu marca y potenciar tu
+      crecimiento.</p>
+  </div>
+  <div class="contact-section-container">
+    <div class="contact-section">
+      <div class="contact-info">
+        <h2>Contáctanos</h2>
+        <p>Estamos listos para ayudarte a conectar con tu audiencia y alcanzar tus objetivos digitales.</p>
+
+        <ul>
+          <li>
+            <strong>Correo Electrónico</strong><br>
+            contacto@identity.com
+          </li>
+          <li>
+            <strong>Teléfono</strong><br>
+            (+51) 987654321
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact-form">
+        <h2>Envíanos un mensaje</h2>
+        <form action="procesar-formulario.php" method="post" novalidate>
+          <div class="form-row">
+            <div>
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="numero">Teléfono</label>
+              <input type="tel" id="numero" name="numero" placeholder="Tu teléfono" required>
+            </div>
+            <div>
+              <label for="correo">Correo Electrónico</label>
+              <input type="email" id="correo" name="correo" placeholder="Tu correo" required>
+            </div>
+          </div>
+
+          <div>
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje" required>
+          </div>
+
+          <div>
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos cómo podemos ayudarte"
+              required></textarea>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="decoration">
+    </div>
+  </div>
+</section>

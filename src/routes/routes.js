@@ -16,7 +16,8 @@ const styles = {
 
   
   const app = document.getElementById('app');
-  const loadRoute = async () => {
+
+const loadRoute = async () => {
   const path = location.hash.slice(1) || '/';
   const route = routes[path];
   const stylePath = styles[path];
@@ -28,7 +29,7 @@ const styles = {
       document.querySelectorAll('[data-route-style]').forEach(link => link.remove());
       if (stylePath) {
         const link = document.createElement('link');
-    link.rel = 'stylesheet';
+        link.rel = 'stylesheet';
         link.href = stylePath;
         link.setAttribute('data-route-style', path);
         document.head.appendChild(link);
@@ -42,5 +43,4 @@ const styles = {
 };
 
 window.addEventListener('hashchange', loadRoute);
-window.addEventListener('DOMContentLoaded', loadRoute);    
-  
+window.addEventListener('DOMContentLoaded', loadRoute);

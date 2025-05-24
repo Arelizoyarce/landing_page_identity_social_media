@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  --color-text-primary: #222;
+  --color-text-secondary: #444;
+  --color-heading: #111;
+  --color-accent: #2D3AAC;
+  --color-accent-hover: #2D3AAC;
+  --color-bg: #f9f9f9;
+  --color-white: #fff;
+  --color-border: #ccc;
+  --color-footer: #000000;
+
+  --font-main: 'Montserrat', sans-serif;
+
+  --font-size-base: clamp(0.875rem, 1vw + 0.5rem, 1.125rem);
+
+  --font-size-h1: clamp(2.5rem, 5vw + 1rem, 5rem);
+  --font-size-h2: clamp(1.25rem, 2vw + 0.75rem, 1.5rem);
+  --font-size-h3: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
+  --font-size-subtitle: clamp(1.25rem, 2vw + 0.5rem, 1.85rem);
+
+  --radius-base: 0.8rem;
+  --radius-large: 1rem;
+
+  --shadow-base: 0 4px 40px rgba(0, 0, 0, 0.09);
+  --transition-base: 0.3s ease;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  margin: 0;
+
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  margin-bottom: 0.5rem;
+  color: var(--color-heading);
+}
+
+h1 strong {
+  color: var(--color-accent);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  color: var(--color-heading);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  color: var(--color-heading);
+}
+
+p {
+  margin-bottom: 2rem;
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+@media (max-width: 400px) {
+  :root {
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 1.25rem;
+    --font-size-h3: 1rem;
+  }
+}
