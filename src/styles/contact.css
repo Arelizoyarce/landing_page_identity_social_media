@@ -1,4 +1,4 @@
-/* ===== Sección Contacto (Mobile First) ===== */
+
 section {
   display: flex;
   flex-direction: column;
@@ -76,7 +76,7 @@ h1 {
   width: 100%;
 }
 
-/* Cuando sea tablet o más grande: lado a lado */
+
 @media (min-width: 768px) {
   .contact-section {
     flex-direction: row;
@@ -98,7 +98,7 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-/* Formulario */
+
 .contact-form {
   background-color: var(--color-bg);
   padding: 2rem;
@@ -159,7 +159,7 @@ h1 {
 
 @media (min-width: 768px) {
    .contact-section {
-    flex-direction: row; /* Tablet y desktop: una al lado de la otra */
+    flex-direction: row;
     align-items: flex-start;
   }
 

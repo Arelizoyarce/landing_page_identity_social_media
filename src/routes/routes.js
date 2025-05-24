@@ -21,17 +21,12 @@ const loadRoute = async () => {
   const path = location.hash.slice(1) || '/';
   const route = routes[path];
   const stylePath = styles[path];
-
   if (route) {
     try {
       const response = await fetch(route);
       const html = await response.text();
       app.innerHTML = html;
-
-      // Elimina estilos anteriores
       document.querySelectorAll('[data-route-style]').forEach(link => link.remove());
-
-      // Inserta el nuevo CSS solo si existe
       if (stylePath) {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
@@ -39,7 +34,6 @@ const loadRoute = async () => {
         link.setAttribute('data-route-style', path);
         document.head.appendChild(link);
       }
-
     } catch (err) {
       app.innerHTML = '<h2>Error al cargar la página.</h2>';
     }
