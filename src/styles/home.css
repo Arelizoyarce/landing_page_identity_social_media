@@ -1,0 +1,185 @@
+.hero {
+  background-image: url('/src/assets/home/equipo.jpg');
+  background-size: cover;
+  background-position: center;
+ background-repeat: no-repeat;
+  height: 580px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 40px 60px;
+  border-radius: 5px;
+}
+
+.hero h2 {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.contenido-principal {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
+
+.principal {
+  text-align: center;
+}
+
+
+
+.categorias {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.categoria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categoria img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.categoria span {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.widget {
+  background: #2D3AAC;
+  color: white;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contenido-widget {
+  max-width: 500px;
+  background-color: rgba(0, 0, 0, 0.3); /* fondo oscuro semitransparente */
+  padding: 40px 60px;
+  border-radius: 5px;
+}
+
+.contenido-widget h2 {
+  margin-bottom: 30px;
+    color: white;
+}
+
+.contenido-widget p {
+  margin-bottom: 25px;
+  line-height: 1.6;
+    color: white;
+}
+
+.contenido-widget .btn {
+  padding: 20px 30px;
+  background: white;
+  color: #1a237e;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contenido-widget button:hover {
+  background: #e0e0e0;
+}
+
+
+
+
+
+.articulos {
+    flex: 1 1 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.articulo {
+    flex: 1 1 300px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.articulo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.articulo h2 {
+    padding: 15px 15px 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.articulo p {
+    padding: 0 15px 15px;
+    text-align: justify;
+}
+.widget h3{
+    text-align: center;
+}
+.widget p {
+    padding: 0 15px 15px;
+    text-align: justify;
+}
+.sidebar {
+    flex: 1 1 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.widget {
+    background-image: url('/src/assets/home/i7.jpg');
+    background-size:cover;
+  background-position: left;
+ background-repeat: no-repeat;
+  height: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.widget img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
