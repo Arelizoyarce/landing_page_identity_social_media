@@ -1,0 +1,72 @@
+/* Centra el contenido del footer */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centra el logo */
+.footer-logo h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+/* Distribuye columnas de forma horizontal en desktop */
+.footer-columns {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* Ajustes para cada columna */
+.footer-column h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-column p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Tamaño y espaciado de íconos */
+.icono-footer {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+/* Pie de página inferior */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 12px;
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+}
+
+/* RESPONSIVE: en móvil, columnas una debajo de otra */
+@media screen and (max-width: 768px) {
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-logo h3 {
+    font-size: 20px;
+  }
+}
+

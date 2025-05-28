@@ -1,21 +1,69 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Landing Page SPA</title>
+  <link rel="stylesheet" href="./src/styles/global.css">
+  <link rel="stylesheet" href="./src/styles/navbar.css">
+  <link rel="stylesheet" href="./src/styles/footer.css">
 </head>
-<body>
-  <nav>
-    <a href="#/">Inicio</a>
-    <a href="#/aboutus">Nosotros</a>
-    <a href="#/services">Servicios</a>
-    <a href="#/portfolio">Portafolio</a>
-    <a href="#/contact">Contacto</a>
-  </nav>
 
-  <div id="app"></div>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <img src="src/assets/logo.jpg" alt="Logo" class="logo-icon">
+
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="#">INICIO</a></li>
+        <li><a href="#/aboutus">NOSOTROS</a></li>
+        <li><a href="#/services">SERVICIOS</a></li>
+        <li><a href="#/portfolio">PORTAFOLIO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="app"></main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="brand">
+        <h1>IDENTITY</h1>
+        <p>SOCIAL MEDIA</p>
+      </div>
+    </div>
+
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>VISÍTANOS</h3>
+        <p>Calle Lima #123<br>Distrito Miraflores</p>
+      </div>
+      <div class="footer-section">
+        <h3>LLÁMANOS</h3>
+        <div class="contact">
+          <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+          <span>987654321</span>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>ENLACES DE INTERÉS</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/somosid.pe?igsh=M2oybnNpdHM1eno5" target="_blank"><img
+              src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram"></a>
+          <a href="#"><img src="https://img.icons8.com/fluency/48/facebook-new.png" alt="Facebook"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>2025 IDENTITY - Todos los derechos reservados</p>
+    </div>
+  </footer>
 
   <script type="module" src="./src/routes/routes.js"></script>
 </body>
+
 </html>

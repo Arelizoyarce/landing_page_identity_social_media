@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 48px;  
+    color: blue;
+    text-shadow: 2px 2px black;
+    animation: mover-izquierda-derecha 2s 1;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes mover-izquierda-derecha{
+  from{
+    transform: translateX(-150px);
+  }
+  to{
+    transform: translateX(0)
+  }
+}
+
+p{
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+main{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.portafolio{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+}
+
+.proyecto{
+    background-color: #f9f9f9;
+    width: calc(33.333% - 30px);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 10px rgba(24,50,199,0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.proyecto img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.proyecto:hover{
+    transform:scale(1.1);
+}
+
+.proyecto p {
+    padding: 10px;
+    font-size: 20px;
+    color: #000000;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 36px;
+    }
+    
+    .portafolio {
+        justify-content: center;
+    }
+
+    .proyecto {
+        width: calc(50% - 30px);
+    }
+}
+
+/* For screens smaller than 768px (mobile) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .proyecto {
+        width: 100%; /* Stack projects vertically */
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
