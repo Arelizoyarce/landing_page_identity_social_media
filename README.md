@@ -16,7 +16,6 @@ Este proyecto es una landing page diseñada para mejorar la presencia digital de
 
 Presentación general de la marca con un mensaje destacado, imagen de portada e invitación a explorar más.
 
-![Captura de Inicio](./screenshots/home.png)
 
 ---
 
@@ -24,7 +23,6 @@ Presentación general de la marca con un mensaje destacado, imagen de portada e 
 
 Sección que describe quiénes somos, nuestra misión, visión y valores. Busca generar confianza con el usuario.
 
-![Captura de Nosotros](./screenshots/aboutus.png)
 
 ---
 
@@ -32,7 +30,6 @@ Sección que describe quiénes somos, nuestra misión, visión y valores. Busca 
 
 Detalle de los servicios que ofrece la empresa, como branding, manejo de redes sociales, diseño de contenido y campañas publicitarias.
 
-![Captura de Servicios](./screenshots/services.png)
 
 ---
 
@@ -40,7 +37,6 @@ Detalle de los servicios que ofrece la empresa, como branding, manejo de redes s
 
 Galería visual con ejemplos de trabajos previos, resultados y casos de éxito. Ideal para mostrar la experiencia profesional.
 
-![Captura de Portafolio](./screenshots/portfolio.png)
 
 ---
 
@@ -48,7 +44,6 @@ Galería visual con ejemplos de trabajos previos, resultados y casos de éxito. 
 
 Formulario interactivo para que los usuarios puedan dejar sus datos y un mensaje. Incluye validaciones y contador de caracteres.
 
-![Captura de Contacto](./screenshots/contact.png)
 
 ---
 
