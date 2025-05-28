@@ -1,3 +1,5 @@
+// Validación de formulario de contacto con contador de caracteres y feedback visual
+
 const form = document.getElementById("contact-form");
 const messageInput = document.getElementById("message");
 const counter = document.getElementById("message-counter");
@@ -5,7 +7,6 @@ const submitBtn = document.getElementById("submit-btn");
 const errorDiv = document.getElementById("form-error");
 const snackbar = document.getElementById("snackbar");
 const MAX_CHARS = 250;
-
 
 const requiredFields = [
   document.getElementById("name"),
@@ -15,6 +16,7 @@ const requiredFields = [
   messageInput,
 ];
 
+// Verifica si todos los campos están llenos y si el mensaje no excede el límite
 function validateFields() {
   let allFilled = true;
   let messageTooLong = false;
@@ -45,18 +47,19 @@ function validateFields() {
   submitBtn.disabled = !(allFilled && !messageTooLong);
 }
 
+// Actualiza el contador de caracteres y valida el formulario
 function updateCounter() {
   const length = messageInput.value.length;
   counter.textContent = `${length} / ${MAX_CHARS}`;
   validateFields();
 }
 
+// Agrega eventos a los campos para validar al escribir
 requiredFields.forEach(field => {
   field.addEventListener("input", updateCounter);
 });
 
-
-
+// Maneja el envío del formulario con retroalimentación visual
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -67,14 +70,13 @@ form.addEventListener("submit", (event) => {
 
   snackbar.textContent = "¡Mensaje enviado con éxito!";
   snackbar.classList.add("show");
-    form.reset();
-    updateCounter();
+  form.reset();
+  updateCounter();
   setTimeout(() => {
     snackbar.classList.remove("show");
     errorDiv.textContent = "";
   }, 3000);
 });
 
-
-
+// Inicializa contador al cargar
 updateCounter();

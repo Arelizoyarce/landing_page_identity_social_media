@@ -1,3 +1,5 @@
+// Enrutador SPA simple que carga HTML, CSS y JS dinámicamente según el hash de la URL
+
 const routes = {
   '/': 'src/pages/home.html',
   '/aboutus': 'src/pages/aboutus.html',
@@ -24,10 +26,12 @@ const scripts = {
 
 const app = document.getElementById('app');
 
+// Elimina los estilos y scripts previamente cargados
 function cleanPreviousResources() {
   document.querySelectorAll('[data-route-style], [data-route-script]').forEach(el => el.remove());
 }
 
+// Carga el archivo de estilos correspondiente a la ruta
 function loadStyle(stylePath, routeKey) {
   if (!stylePath) return;
 
@@ -38,6 +42,7 @@ function loadStyle(stylePath, routeKey) {
   document.head.appendChild(link);
 }
 
+// Carga el archivo de script correspondiente a la ruta
 function loadScript(scriptPath, routeKey) {
   if (!scriptPath) return;
 
@@ -48,6 +53,7 @@ function loadScript(scriptPath, routeKey) {
   document.body.appendChild(script);
 }
 
+// Carga el HTML, CSS y JS de la ruta actual
 async function loadRoute() {
   const path = location.hash.slice(1) || '/';
   const htmlPath = routes[path];
@@ -69,13 +75,12 @@ async function loadRoute() {
     app.innerHTML = html;
     loadStyle(stylePath, path);
     loadScript(scriptPath, path);
-
   } catch (error) {
     console.error('Error cargando la ruta:', error);
     app.innerHTML = '<h2>Error al cargar la página.</h2>';
   }
 }
 
-// Listeners para SPA
+// Escucha cambios de hash y carga la ruta correspondiente
 window.addEventListener('hashchange', loadRoute);
 window.addEventListener('DOMContentLoaded', loadRoute);
