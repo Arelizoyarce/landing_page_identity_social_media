@@ -1,3 +1,10 @@
+/* ---------------------------------------------
+   Sección: Contenedor principal y descripción
+   ---------------------------------------------
+   Contenedor flexible para la sección de servicios.
+   Incluye animación en el título principal y estilos
+   tipográficos para párrafos y encabezados.
+---------------------------------------------- */
 .contenido-principal {
     display: flex;
     flex-wrap: wrap;
@@ -11,7 +18,7 @@
     animation: mover-izquierda-derecha 2s 1;
     animation-fill-mode: forwards;      
 }
-
+/* Animación que mueve el título de izquierda a derecha */
 @keyframes mover-izquierda-derecha{
   from{
     transform: translateX(-150px);
@@ -37,7 +44,7 @@ h2{
   color: #0033cc;
   font-size: 45px;
 }
-
+/* Línea divisoria */
 hr {
     border: none;
     height: 5px;        
@@ -52,6 +59,13 @@ h1{
   color: #0033cc;
 }
 
+/* ---------------------------------------------
+   Sección: Servicios (artículos)
+   ---------------------------------------------
+   Diseño responsivo de artículos con imagen,
+   título y texto justificado, usando flexbox
+   para distribución y espaciado uniforme.
+---------------------------------------------- */
 .articulos {
     flex: 1 1 70%;
     display: flex;
@@ -73,6 +87,7 @@ h1{
     align-items: center;
 }
 
+/* Estilo para imágenes dentro de cada artículo */
 .articulo img {
     width: 100%;
     height: auto;
@@ -93,6 +108,12 @@ h1{
     flex-grow: 1;
 }
 
+/* ---------------------------------------------
+   Sección: Beneficios
+   ---------------------------------------------
+   Diseño con flexbox para tarjetas de beneficios,
+   con efectos hover para interacción visual.
+---------------------------------------------- */
 .beneficios {
   display: flex;
   flex-wrap: wrap;
@@ -172,6 +193,7 @@ h1{
   color: #0073b7;
 }
 
+/* Boton de "Solicitar servicio" */
 .btn-mas {
   background-color: #0033cc;
   color: white;
@@ -194,7 +216,9 @@ h1{
   outline-offset: 2px;
 }
 
+/* Media Queries para diseño responsiva */
 @media (max-width: 1024px) {
+  /* Ajustes para tablets y pantallas medianas */
   .articulos {
     padding: 20px 50px;
   }
@@ -224,6 +248,7 @@ h1{
 }
 
 @media (max-width: 768px) {
+  /* Ajustes para móviles grandes y tablets pequeños */
   .descripcion h1 {
     font-size: 36px;
     text-align: center;
@@ -262,6 +287,7 @@ h1{
 }
 
 @media (max-width: 480px) {
+  /* Ajustes para móviles pequeños */
   .descripcion h1 {
     font-size: 30px;
   }

@@ -1,17 +1,23 @@
+/* 
+  Reset general: elimina márgenes y paddings por defecto, 
+  y aplica box-sizing para incluir padding y borde dentro del tamaño total
+*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo principal para títulos h1 */
 h1{
     font-size: 48px;  
     color: blue;
-    text-shadow: 2px 2px black;
-    animation: mover-izquierda-derecha 2s 1;
+    text-shadow: 2px 2px black; /* Sombra para mejorar la legibilidad */
+    animation: mover-izquierda-derecha 2s 1; /* Animación al cargar */
     animation-fill-mode: forwards; 
 }
 
+/* Animación que mueve el título desde la izquierda hacia su posición */
 @keyframes mover-izquierda-derecha{
   from{
     transform: translateX(-150px);
@@ -21,47 +27,53 @@ h1{
   }
 }
 
+/* Estilo para párrafos con clase .derecho, alineados a la izquierda */
 .derecho{
     font-size: 20px;
     line-height: 1.5;
     text-align: left;
 }
-
+/* Contenedor principal centrado con ancho máximo y padding */
 main{
     max-width: 1300px;
     margin: auto;
     padding: 20px;
 }
 
+/* Contenedor del portafolio: usa flexbox para filas flexibles */
 .portafolio{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
+    justify-content: space-between; /* Espacio entre proyectos */
+    gap: 30px; /* Separación entre elementos */
     padding: 20px;
 }
 
+/* Cada proyecto: caja con fondo claro, sombra y borde redondeado */
 .proyecto{
     background-color: #f9f9f9;
-    width: calc(33.333% - 30px);
+    width: calc(33.333% - 30px); /* 3 columnas con espacio entre ellas */
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 10px 10px rgba(24,50,199,0.2);
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Animación suave al hacer hover */
     margin-bottom: 20px;
 }
 
+/* Imagen dentro del proyecto: tamaño completo y recorte para mantener proporción */
 .proyecto img{
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
+/* Efecto hover para aumentar tamaño del proyecto */
 .proyecto:hover{
     transform:scale(1.1);
 }
 
+/* Párrafos dentro de proyecto con padding y texto centrado */
 .proyecto p {
     padding: 10px;
     font-size: 20px;
@@ -69,31 +81,34 @@ main{
     text-align: center;
 }
 
+/* --- Media Queries para diseño responsivo --- */
+
+/* Pantallas medianas (1024px o menos) */
 @media (max-width: 1024px) {
     h1 {
-        font-size: 36px;
+        font-size: 36px; /* Reducir tamaño del título */
     }
     
     .portafolio {
-        justify-content: center;
+        justify-content: center; /* Centrar proyectos en fila */
     }
 
     .proyecto {
-        width: calc(50% - 30px);
+        width: calc(50% - 30px); /* 2 columnas en lugar de 3 */
     }
 }
 
-/* For screens smaller than 768px (mobile) */
+/* Pantallas pequeñas (768px o menos) */
 @media (max-width: 768px) {
     h1 {
-        font-size: 28px;
+        font-size: 28px; /* Título más pequeño para móviles */
     }
 
     .proyecto {
-        width: 100%; /* Stack projects vertically */
+        width: 100%; /* Apilar proyectos en columna */
     }
 
     p {
-        font-size: 18px;
+        font-size: 18px; /* Texto un poco más pequeño para mejor lectura */
     }
 }
