@@ -1,3 +1,5 @@
+/* Footer 
+La parte izquierda tiene texto y botón; la derecha muestra un video */
 .footer {
   background-color: #000;
   color: #fff;
@@ -9,14 +11,14 @@
   font-size: 3rem;
   margin: 0;
   font-weight: bold;
-  color: white;
+    color: #fff;
 }
 
 .footer-top .brand p {
   font-size: 1.2rem;
   margin-top: 5px;
   letter-spacing: 1px;
-  color: white;
+    color: #fff;
 }
 
 .footer-content {
@@ -36,13 +38,13 @@
 .footer-section h3 {
   margin-bottom: 10px;
   font-weight: 500;
-  color: white;
+    color: #fff;
 }
 
-.footer-section p,
-.footer-section span {
+.footer-section p, .footer-section span {
   font-size: 1rem;
   line-height: 1.5;
+    color: #fff;
 }
 
 .contact {

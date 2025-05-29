@@ -17,7 +17,7 @@ const styles = {
 };
 
 const scripts = {
-  '/': null,
+  '/': 'src/scripts/home.js',
   '/aboutus': null,
   '/services': null,
   '/portfolio': null,

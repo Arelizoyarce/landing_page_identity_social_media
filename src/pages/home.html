@@ -1,33 +1,59 @@
 <section class="hero">
   <div class="overlay">
-    <h2>SOMOS CREADORES</h2>
+
+    <h1 id="titulo-creador" class="maquina"></h1>
   </div>
+
 </section>
+<!---->
+<!--SECCIÓN CATEGORÍAS:
+Cuatro categorías de servicios (Social Media, BTL, Audiovisual, Branding) con 
+imagen, título y descripción emergente al pasar el mouse (hover)..-->
+
+
 <section class="categorias">
-  <div class="categoria">
+  <div class="categoria" onmouseover="mostrarTexto(0)" onmouseout="ocultarTexto(0)">
     <a href="#"> <img src="/src/assets/home/I2.jpg" alt="Social Media"></a>
     <span>Social Media</span>
+    <div class="descripcion">Gestionamos tus redes sociales con estrategias efectivas.</div>
+
   </div>
-  <div class="categoria">
+
+  <div class="categoria" onmouseover="mostrarTexto(1)" onmouseout="ocultarTexto(1)">
     <a href="#"><img src="/src/assets/home/I3.jpg" alt="BTL"> </a>
     <span>BTL</span>
+    <div class="descripcion">Creamos experiencias únicas para tu público.</div>
   </div>
-  <div class="categoria">
+  <div class="categoria" onmouseover="mostrarTexto(2)" onmouseout="ocultarTexto(2)">
     <a href="#"><img src="/src/assets/home/i4.jpg" alt="Audiovisual"> </a>
     <span>Audiovisual</span>
+    <div class="descripcion">Producción de videos y fotografía profesional.</div>
   </div>
-  <div class="categoria">
+
+  <div class="categoria" onmouseover="mostrarTexto(3)" onmouseout="ocultarTexto(3)">
     <a href="#"><img src="/src/assets/home/i5.png" alt="Branding"> </a>
     <span>Branding</span>
+    <div class="descripcion">Construimos la identidad visual de tu marca.</div>
   </div>
 </section>
+<!------>
+
+<!--WIDGET + VIDEO:Texto motivacional con botón “Conócenos” y un video de fondo sobre los trabajos de la empresa.-->
 
 <section class="widget">
-  <div class="contenido-widget" style="position: relative; top: 100px;">
+  <div class="contenido-widget" style="position: relative">
     <h2>BRILLA CON NOSOTROS</h2>
-    <p>En ID, conectamos creatividad, estrategia y tecnología para llevar tu marca al siguiente nivel. Ya sea que estés
-      empezando o buscando reinventarte, estamos aquí para ayudarte a destacar.</p>
+    <p>En ID, conectamos creatividad, estrategia y tecnología para llevar tu marca al siguiente nivel. Ya sea que
+      estés empezando
+      o buscando reinventarte, estamos aquí para ayudarte a destacar.</p>
     <a href="#/contact" class="btn">CONTÁCTANOS</a>
   </div>
 
+
+  <div class="video-container" style="position: relative">
+    <video width="620" height="430" autoplay muted loop>
+      <source src="/src/assets/home/NUESTRO TRABAJO - ID.mp4" type="video/mp4">
+      Tu navegador no soporta videos HTML5.
+    </video>
+  </div>
 </section>

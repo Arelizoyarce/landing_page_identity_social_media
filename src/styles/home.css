@@ -1,5 +1,10 @@
+/* Contenido principal con Flexbox
+Se crea una sección tipo “hero” con imagen de fondo y capa oscura encima.
+El texto “SOMOS CREADORES” se muestra en blanco al centro con animación de 
+escribir (definida en JS). */
+
 .hero {
-  background-image: url('/src/assets/home/equipo.jpg');
+  background-image: url('/src/assets/home/i8.jpg');
   background-size: cover;
   background-position: center;
  background-repeat: no-repeat;
@@ -12,7 +17,7 @@
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3); /* fondo oscuro semitransparente */
   padding: 40px 60px;
   border-radius: 5px;
 }
@@ -32,15 +37,38 @@
 }
 
 body {
-  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #f7f7f7;
-  color: #333;
 }
 
 .principal {
   text-align: center;
 }
+/* título somos creadores estilo para el efecto máquina de escribir*/
+
+.maquina {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  margin: auto;
+  animation: cursor 0.7s steps(1) infinite;
+}
+
+@keyframes cursor {
+  0% { border-color: white; }
+  50% { border-color: transparent; }
+  100% { border-color: white; }
+}
+/*------------------------------
+
+
+/*Muestra 4 cajas alineadas horizontalmente (o en columnas en pantallas pequeñas).
+
+Al pasar el mouse se agrandan ligeramente (efecto zoom). */
 
 
 
@@ -71,6 +99,30 @@ body {
   font-weight: bold;
 }
 
+.descripcion {
+  display: none;
+  background-color: #ada9a9;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  width: 180px;
+  position: absolute;
+  z-index: 1;
+}
+
+.categoria {
+  position: relative;
+}
+/*Rotar la imagen al pasar el mouse*/
+.categoria img:hover {
+  transform: rotate(10deg);
+  transition: transform 0.3s;
+}
+
+/*La parte izquierda tiene texto y botón; la derecha muestra un video */
 .widget {
   background: #2D3AAC;
   color: white;
@@ -80,24 +132,26 @@ body {
 }
 
 .contenido-widget {
+  flex: 1;
   max-width: 500px;
-  background-color: rgba(0, 0, 0, 0.3); /* fondo oscuro semitransparente */
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 40px 60px;
   border-radius: 5px;
+  margin-left: 30px; /* Mueve el div hacia la derecha */
 }
 
 .contenido-widget h2 {
-  margin-bottom: 30px;
-    color: white;
+  margin-bottom: 60px;
+  color: white;
+  text-align: center;
 }
 
 .contenido-widget p {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   line-height: 1.6;
-    color: white;
 }
 
-.contenido-widget .btn {
+.btn {
   padding: 20px 30px;
   background: white;
   color: #1a237e;
@@ -105,16 +159,22 @@ body {
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block; 
   transition: background 0.3s;
 }
 
-.contenido-widget button:hover {
+.btn:hover {
   background: #e0e0e0;
 }
-
-
-
-
+/*video*/
+.video-container {
+  display: flex;
+  justify-content: flex-end; /* Alinea el video a la derecha */
+  margin-top: 40px;
+  padding-right: 20px 60px; /* Opcional: pequeño espacio desde el borde izquierdo */
+}
+/**/
 
 .articulos {
     flex: 1 1 70%;
@@ -153,6 +213,7 @@ body {
 .widget p {
     padding: 0 15px 15px;
     text-align: justify;
+    color: white
 }
 .sidebar {
     flex: 1 1 25%;
@@ -162,7 +223,7 @@ body {
 }
 
 .widget {
-    background-image: url('/src/assets/home/i7.jpg');
+    background-image: url('/src/assets/home/i77.jpg');
     background-size:cover;
   background-position: left;
  background-repeat: no-repeat;
@@ -183,3 +244,54 @@ body {
     height: auto;
     margin-bottom: 10px;
 }
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .menu a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .contenido-principal {
+        flex-direction: column;
+    }
+    
+    .articulos {
+        flex: 1 1 100%;
+    }
+    
+    .sidebar {
+        flex: 1 1 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .widget {
+        flex: 1 1 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .articulo {
+        flex: 1 1 100%;
+    }
+    
+    .widget {
+        flex: 1 1 100%;
+    }
+}
+
+
+
