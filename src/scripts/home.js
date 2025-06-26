@@ -70,4 +70,3 @@ function ocultarTexto(index) {
 }
 
 escribirTexto()
-
