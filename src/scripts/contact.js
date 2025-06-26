@@ -60,7 +60,7 @@ requiredFields.forEach(field => {
 });
 
 // Maneja el envío del formulario con retroalimentación visual
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   if (submitBtn.disabled) {
@@ -68,15 +68,43 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  snackbar.textContent = "¡Mensaje enviado con éxito!";
-  snackbar.classList.add("show");
-  form.reset();
-  updateCounter();
-  setTimeout(() => {
-    snackbar.classList.remove("show");
-    errorDiv.textContent = "";
-  }, 3000);
+  const formData = {
+    name: form.name.value.trim(),
+    phone: form.phone.value.trim(),
+    email: form.email.value.trim(),
+    subject: form.subject.value.trim(),
+    message: form.message.value.trim()
+  };
+
+  try {
+    const response = await fetch("https://identity.42web.io/backend/contacto.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const text = await response.text();
+    snackbar.textContent = text;
+    snackbar.classList.add("show");
+    snackbar.style.backgroundColor ="green"
+    if (response.ok) {
+      form.reset();
+      updateCounter();
+    }
+
+    setTimeout(() => {
+      snackbar.classList.remove("show");
+      errorDiv.textContent = "";
+    }, 3000);
+  } catch (error) {
+    snackbar.textContent = "Error al enviar el mensaje.";
+    snackbar.classList.add("show");
+    snackbar.style.backgroundColor ="red"
+  }
 });
+
 
 // Inicializa contador al cargar
 updateCounter();
