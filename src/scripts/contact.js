@@ -2,6 +2,7 @@
 
 const form = document.getElementById("contact-form");
 const messageInput = document.getElementById("message");
+const phoneInput = document.getElementById("phone");
 const counter = document.getElementById("message-counter");
 const submitBtn = document.getElementById("submit-btn");
 const errorDiv = document.getElementById("form-error");
@@ -10,7 +11,7 @@ const MAX_CHARS = 250;
 
 const requiredFields = [
   document.getElementById("name"),
-  document.getElementById("phone"),
+  phoneInput,
   document.getElementById("email"),
   document.getElementById("subject"),
   messageInput,
@@ -29,9 +30,6 @@ function validateFields() {
 
   if (messageInput.value.length > MAX_CHARS) {
     messageTooLong = true;
-  }
-
-  if (messageTooLong) {
     messageInput.classList.add("error");
     counter.classList.add("error");
     errorDiv.textContent = `El mensaje no debe superar los ${MAX_CHARS} caracteres.`;
@@ -41,25 +39,37 @@ function validateFields() {
     counter.classList.remove("error");
     if (allFilled) {
       errorDiv.textContent = "";
-      errorDiv.style.color = "black";
     }
   }
+
   submitBtn.disabled = !(allFilled && !messageTooLong);
 }
 
-// Actualiza el contador de caracteres y valida el formulario
+// Actualiza el contador de caracteres
 function updateCounter() {
   const length = messageInput.value.length;
   counter.textContent = `${length} / ${MAX_CHARS}`;
-  validateFields();
 }
 
-// Agrega eventos a los campos para validar al escribir
+// Agrega eventos a los campos
 requiredFields.forEach(field => {
-  field.addEventListener("input", updateCounter);
+  if (field === messageInput) {
+    field.addEventListener("input", () => {
+      updateCounter();
+      validateFields();
+    });
+  } else {
+    field.addEventListener("input", validateFields);
+  }
 });
 
-// Maneja el envío del formulario con retroalimentación visual
+// Filtra caracteres no numéricos mientras escribe en el teléfono
+phoneInput.addEventListener("input", () => {
+  phoneInput.value = phoneInput.value.replace(/\D/g, "");
+  validateFields();
+});
+
+// Maneja el envío del formulario
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -88,10 +98,12 @@ form.addEventListener("submit", async (event) => {
     const text = await response.text();
     snackbar.textContent = text;
     snackbar.classList.add("show");
-    snackbar.style.backgroundColor ="green"
+    snackbar.style.backgroundColor = "green";
+
     if (response.ok) {
       form.reset();
       updateCounter();
+      submitBtn.disabled = true;
     }
 
     setTimeout(() => {
@@ -101,10 +113,10 @@ form.addEventListener("submit", async (event) => {
   } catch (error) {
     snackbar.textContent = "Error al enviar el mensaje.";
     snackbar.classList.add("show");
-    snackbar.style.backgroundColor ="red"
+    snackbar.style.backgroundColor = "red";
   }
 });
 
-
-// Inicializa contador al cargar
+// Inicializa contador y validación al cargar
 updateCounter();
+validateFields();
